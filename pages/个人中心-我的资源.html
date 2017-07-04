@@ -20,31 +20,31 @@
 <!--header-->
 <div class="header-02">
 	<a class="head-back" href="javascript:;" onclick="history.go(-1);"><i class="iconfont">&#xe618;</i></a>
-	<h2 class="head-name">找回登录密码</h2>
+	<h2 class="head-name">我的资源</h2>
 </div>
 <div class="bbcy-border"></div>
 <!--/header-->
 
 <!--container-->
-	<link href="css/topiclist.css" rel="stylesheet" type="text/css" />
-	<div class="subnav">
-		<div class="title-box">
-			<h3 class="tit-name">话题<span class="small-text">(共126530 份)</span></h3>
-		</div>
-		<div class="bbcy-border"></div>
-		<ul class="main-link-box clearfix">
-			<li class="link-list"><a class="links" href="">营销策划</a></li>
-			<li class="link-list"><a class="links" href="">管理综合</a></li>
-			<li class="link-list"><a class="links" href="">互联网营销</a></li>
-			<li class="link-list"><a class="links" href="">互联网创业</a></li>
-			<li class="link-list"><a class="links" href="">平面设计</a></li>
-			<li class="link-list c-red"><a class="links" href="">终端店铺</a></li>
-			<li class="link-list"><a class="links" href="">设计欣赏</a></li>
-			<li class="link-list"><a class="links" href="">美图欣赏</a></li>
-		</ul>
+	<link href="css/personal.css" rel="stylesheet" type="text/css" />
+	<div class="search-box">
+		<div class="weui-search-bar" id="searchBar">
+	        <form class="weui-search-bar_form">
+	            <div class="weui-search-bar_box">
+	                <i class="weui-icon-search iconfont">&#xe603;</i>
+	                <input type="search" class="weui-search-bar_input" id="searchInput" placeholder="搜索" required="">
+	                <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+	            </div>
+	            <label class="weui-search-bar_label" id="searchText">
+	                <i class="weui-icon-search iconfont">&#xe603;</i>
+	                <span>搜索</span>
+	            </label>
+	        </form>
+	        <a href="javascript:" class="weui-search-bar_cancel-btn" id="searchCancel">取消</a>
+	    </div>
 	</div>
 	<div class="bbcy-border"></div>
-	<!-- 话题列表 -->
+	<!-- 资源列表 -->
 	<div class="topic-list-box">
 		<dl class="topic-list clearfix">
 			<dt class="topic-l"><a href=""><img class="topic-img" src="http://www.bbcyw.com/FileUpload/News/8924370a-4bf2-488b-845f-c1628ececee9.jpg"></a></dt>
@@ -166,21 +166,57 @@
 				</div>
 			</dd>
 		</dl>
-		<!-- 分页 -->
-		<div class="page-main">
-			<a class="home-page">首页</a>
-			<a class="prev-page">上一页</a>
-			<span class="select-page">1</span>
-			<a class="page-num" href="">2</a>
-			<a class="page-num" href="">3</a>
-			<a class="page-num" href="">4</a>
-			<span class="omitted">...</span>
-			<a class="next-page" href="">下一页</a>
-			<a class="last-page" href="">末页</a>
+		<div class="pic-more-box">
+			<a class="pic-more" href="">加载更多<i class="iconfont">&#xe604;</i></a>
 		</div>
-		<!-- /分页 -->
 	</div>
-	<!-- /话题列表 -->
+	<!-- /资源列表 -->
+	<script type="text/javascript">
+		$(function(){
+        var $searchBar = $('#searchBar'),
+            $searchResult = $('#searchResult'),
+            $searchText = $('#searchText'),
+            $searchInput = $('#searchInput'),
+            $searchClear = $('#searchClear'),
+            $searchCancel = $('#searchCancel');
+
+        function hideSearchResult(){
+            $searchResult.hide();
+            $searchInput.val('');
+        }
+        function cancelSearch(){
+            hideSearchResult();
+            $searchBar.removeClass('weui-search-bar_focusing');
+            $searchText.show();
+        }
+
+        $searchText.on('click', function(){
+            $searchBar.addClass('weui-search-bar_focusing');
+            $searchInput.focus();
+        });
+        $searchInput
+            .on('blur', function () {
+                if(!this.value.length) cancelSearch();
+            })
+            .on('input', function(){
+                if(this.value.length) {
+                    $searchResult.show();
+                } else {
+                    $searchResult.hide();
+                }
+            })
+        ;
+        $searchClear.on('click', function(){
+            hideSearchResult();
+            $searchInput.focus();
+        });
+        $searchCancel.on('click', function(){
+            cancelSearch();
+            $searchInput.blur();
+        });
+    });
+
+	</script>
 <!--/container-->
 
 <!--footer-->

@@ -1,4 +1,5 @@
 @import 'module/swiper';//swiper
+@import 'module/topic';//列表内容
 $bbcywColor: #f7372c;
 
 /*个人中心-主页*/
@@ -123,9 +124,53 @@ $bbcywColor: #f7372c;
 .p-input{background:#fff;width:100%;height:3rem;margin:1rem auto;}
 .p-input input{width:94%;padding:0 3%;height:3rem;line-height:3rem;border:none;font-size:1.4rem;}
 
-
-
-
 /*个人中心-密码设置 end*/
 
 
+/*个人中心-收支记录明细*/
+.sz-records{width:100%;}
+.sz-records ul li{float:left;width:94%;padding:1rem 3%;border-bottom:1px solid #e3e3e3;}
+.sz-records ul li .list-l{float:left;}
+.sz-records ul li .list-r{float:right;}
+.sz-records ul li .list-l .list-tit{font-size:1.6rem;color:#000;line-height:2rem;}
+.sz-records ul li .list-l .list-time{font-size:1.2rem;color:#727272;line-height:1.5rem;}
+.sz-records ul li .list-r .list-price{color:$bbcywColor;font-size:2rem;line-height:3.5rem;}
+
+/*个人中心-收支记录明细 end*/
+
+
+/*个人中心-收支记录共享分*/
+.share-numbox{width:100%;margin:5rem auto 0rem;}
+.share-icon{width:8rem;height:8rem;background:#2c9af7;border-radius:50%;margin:1rem auto;}
+.share-icon .iconfont{color:#fff;font-size:6rem;line-height:8rem;text-align:center;display:block;}
+.share-tit{font-size:1.6rem;color:#2e2e2e;text-align:center;}
+.share-num{font-size:4rem;color:#000;text-align:center;line-height:3.5rem;}
+.share-numbox .btn-submit{color:#fff;font-size:1.6rem;display:block;width:94%;height:3.5rem;line-height:3.5rem;text-align:center;background-color:#dd2726;border:none;cursor:pointer;margin:3rem auto 0rem;outline:none;}
+.share-numbox .btn-close{background:#d2d2d2;color:#000;margin:1rem auto 3rem;}
+
+/*个人中心-收支记录共享分 end*/
+
+
+/*个人中心-我的资源*/
+/*搜索*/
+.search-box{background:#e1e1e1;padding:0 3%;}
+.weui-search-bar {position: relative;display: -webkit-box;display: -webkit-flex;display: flex;box-sizing: border-box;background-color: #fff;border:1px solid #cccccc;border-radius:3px;}
+.weui-search-bar_form {position: relative;-webkit-box-flex: 1;-webkit-flex: auto;flex: auto;}
+.weui-search-bar_box {position: relative;padding:0 2.5rem;height: 100%;width: 100%;box-sizing: border-box;z-index: 1;}
+.weui-search-bar.weui-search-bar_focusing .weui-search-bar_cancel-btn {display: block;}
+.weui-search-bar.weui-search-bar_focusing .weui-search-bar_label {display: none;}
+.weui-search-bar_box .weui-icon-search {position: absolute;left: 10px;top: 0;line-height: 3rem;}
+.weui-icon-search {color: $bbcywColor;font-size: 1.4rem;}
+.weui-search-bar_label .weui-icon-search {margin-right: 5px;}
+.weui-search-bar_box .weui-search-bar_input{padding: 0 0;width: 100%;height: 3rem;border: 0;font-size: 1.4rem;line-height: 3rem;box-sizing: content-box;}
+.weui-search-bar_box .weui-icon-clear{position: absolute;
+top: 0;right: 0;padding: 0 10px;line-height: 3rem;}
+.weui-icon-clear{color: $bbcywColor;font-size: 1.4rem;}
+.weui-search-bar_label{position: absolute;top: 0px;right: 0px;bottom: 0px;left: 0px;z-index: 2;text-align: center;color: #727272;line-height:3rem;height:3rem;font-size: 1.4rem;background:#fff;}
+.weui-search-bar_cancel-btn{display: none;margin-right: 1rem;line-height: 3rem;color: $bbcywColor;white-space: nowrap;}
+
+/*更多*/
+.pic-more-box {padding: 0 1rem;}
+.pic-more-box .pic-more {color: #fff;background-color: $bbcywColor;display: block;width: 100%;text-align: center;font-size: 1.4rem;height: 3rem;line-height: 3rem;}
+
+/*个人中心-我的资源 end*/
